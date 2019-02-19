@@ -15,7 +15,6 @@ public class Main {
         Student student1 = new Student("Roma", 7.5);
         Student student2 = new Student("Leha", 8);
         Student student3 = new Student("Ilya", 6.9);
-
         Brigade brigade = new Brigade("no name", student1, student2);
 
         printer.print(brigade);

@@ -12,11 +12,7 @@ public class Searcher {
 
         Student[] equipment = brigade.getStudents();
 
-        if (equipment == null){
-            return null;
-        }
-
-        if (equipment.length == 0){
+        if (equipment == null || equipment.length == 0){
             return null;
         }
 
@@ -37,11 +33,7 @@ public class Searcher {
 
         Student[] equipment = brigade.getStudents();
 
-        if (equipment == null){
-            return null;
-        }
-
-        if (equipment.length == 0){
+        if (equipment == null || equipment.length == 0){
             return null;
         }
 

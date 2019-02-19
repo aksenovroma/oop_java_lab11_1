@@ -7,16 +7,20 @@ import by.bntu.fitr.povt.noname.lab11.model.entity.Student;
 public class Calculator {
     public static double calcAverageMark(Brigade brigade){
         if (brigade == null){
-            return 0;
+            return 0.0;
         }
 
         Student[] students = brigade.getStudents();
-        double averageMark = 0;
+        double sumMark = 0.0;
 
-        for (Student student : students){
-            averageMark += student.getMark();
+        if (students == null || students.length == 0){
+            return sumMark;
         }
 
-        return averageMark / students.length;
+        for (Student student : students){
+            sumMark += student.getMark();
+        }
+
+        return sumMark / students.length;
     }
 }
