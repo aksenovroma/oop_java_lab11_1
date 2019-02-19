@@ -34,9 +34,7 @@ public class Brigade {
     public void add(Student student){
         Student[] newEquipment = new Student[students.length + 1];
 
-        for (int i = 0; i < students.length; i++){
-            newEquipment[i] = students[i];
-        }
+        System.arraycopy(students, 0, newEquipment, 0, students.length);
         newEquipment[students.length] = student;
 
         students = newEquipment;
