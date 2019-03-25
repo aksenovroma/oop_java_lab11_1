@@ -7,15 +7,15 @@ import by.bntu.fitr.povt.noname.lab11.view.PrinterType;
 
 
 public class PrinterCreator {
-    public static Printable create(PrinterType printerType){
+    public static Printable create(PrinterType printerType) {
         Printable printer = null;
 
-        switch (printerType){
-            case CONSOLE:{
+        switch (printerType) {
+            case CONSOLE: {
                 printer = new ConsolePrint();
                 break;
             }
-            case FILE:{
+            case FILE: {
                 printer = new FilePrint();
                 break;
             }

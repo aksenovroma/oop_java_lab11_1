@@ -6,44 +6,32 @@ import by.bntu.fitr.povt.noname.lab11.model.entity.Student;
 
 public class Searcher {
     public static Student findStudentWithMaxMark(Brigade brigade){
-        if (brigade == null){
-            return null;
-        }
+        if (brigade != null && brigade.getStudents() != null) {
 
-        Student[] equipment = brigade.getStudents();
+            Student maxMarkStudent = brigade.getStudents()[0];
 
-        if (equipment == null || equipment.length == 0){
-            return null;
-        }
-
-        Student maxPowerEquipment = equipment[0];
-
-        for (Student anEquipment : equipment) {
-            if (maxPowerEquipment.getMark() < anEquipment.getMark()) {
-                maxPowerEquipment = anEquipment;
+            for (Student student : brigade.getStudents()) {
+                if (maxMarkStudent.getMark() < student.getMark()) {
+                    maxMarkStudent = student;
+                }
             }
+            return maxMarkStudent;
         }
-        return maxPowerEquipment;
+        return null;
     }
 
     public static Student findStudentWithMinMark(Brigade brigade){
-        if (brigade == null){
-            return null;
-        }
+        if (brigade != null && brigade.getStudents() != null) {
 
-        Student[] equipment = brigade.getStudents();
+            Student minMarkStudent = brigade.getStudents()[0];
 
-        if (equipment == null || equipment.length == 0){
-            return null;
-        }
-
-        Student minPowerEquipment = equipment[0];
-
-        for (Student anEquipment : equipment) {
-            if (minPowerEquipment.getMark() > anEquipment.getMark()) {
-                minPowerEquipment = anEquipment;
+            for (Student student : brigade.getStudents()) {
+                if (minMarkStudent.getMark() > student.getMark()) {
+                    minMarkStudent = student;
+                }
             }
+            return minMarkStudent;
         }
-        return minPowerEquipment;
+        return null;
     }
 }

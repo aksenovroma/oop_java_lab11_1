@@ -15,29 +15,30 @@ public class Main {
         Student student1 = new Student("Roma", 7.5);
         Student student2 = new Student("Leha", 8);
         Student student3 = new Student("Ilya", 6.9);
+
         Brigade brigade = new Brigade("no name", student1, student2);
 
         printer.print(brigade);
 
         brigade.add(student3);
-        printer.print(brigade);
+        printer.print("add: " + brigade);
 
         brigade.remove(student2);
-        printer.print(brigade);
+        printer.print("remove: " + brigade);
 
         double averageMark = Calculator.calcAverageMark(brigade);
-        printer.print(averageMark);
+        printer.print("averageMark: " + averageMark);
 
         Student studentWithMaxMark = Searcher.findStudentWithMaxMark(brigade);
-        printer.print(studentWithMaxMark);
+        printer.print("student with max mark: " + studentWithMaxMark);
 
         Student studentWithMinMark = Searcher.findStudentWithMinMark(brigade);
-        printer.print(studentWithMinMark);
+        printer.print("student with min mark: " + studentWithMinMark);
 
         brigade.replaceByIndex(student2, 0);
         printer.print(brigade);
 
         boolean atBrigade = brigade.isAtBrigade(student1);
-        printer.print(atBrigade);
+        printer.print("is student at brigade: " + atBrigade);
     }
 }

@@ -8,7 +8,8 @@ public class Brigade {
     private String name;
     private Student[] students;
 
-    public Brigade(){}
+    public Brigade() {
+    }
 
     public Brigade(String name, Student... students) {
         this.name = name;
@@ -31,7 +32,11 @@ public class Brigade {
         this.students = students;
     }
 
-    public void add(Student student){
+    public int size() {
+        return students.length;
+    }
+
+    public void add(Student student) {
         Student[] newEquipment = new Student[students.length + 1];
 
         System.arraycopy(students, 0, newEquipment, 0, students.length);
@@ -40,12 +45,12 @@ public class Brigade {
         students = newEquipment;
     }
 
-    public void remove(Student student){
-        if (isAtBrigade(student)){
+    public void remove(Student student) {
+        if (isAtBrigade(student)) {
             Student[] newEquipment = new Student[students.length - 1];
 
-            for (int i = 0, j = 0; i < students.length; i++, j++){
-                if (!(student.equals(students[i]))){
+            for (int i = 0, j = 0; i < students.length; i++, j++) {
+                if (!(student.equals(students[i]))) {
                     newEquipment[j] = students[i];
                 } else {
                     j--;
@@ -55,21 +60,21 @@ public class Brigade {
         }
     }
 
-    public void replaceByIndex(Student student, int index){
-        if (student == null || (index > students.length - 1 || index < 0)){
+    public void replaceByIndex(Student student, int index) {
+        if (student == null || (index > students.length - 1 || index < 0)) {
             return;
         }
 
         students[index] = student;
     }
 
-    public boolean isAtBrigade(Student student){
-        if (student == null){
+    public boolean isAtBrigade(Student student) {
+        if (student == null) {
             return false;
         }
 
-        for (Student student1 : students){
-            if (student.equals(student1)){
+        for (Student student1 : students) {
+            if (student.equals(student1)) {
                 return true;
             }
         }
